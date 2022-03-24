@@ -74,7 +74,13 @@ const Form = () => {
         <FormRow>
           <FormColumn>
             <FormTitle>Let's talk</FormTitle>
-            <FormWrapper onSubmit={handleSubmit}>
+            <FormWrapper
+              onSubmit={handleSubmit}
+              name="contact v1"
+              method="post"
+              data-netlify="true"
+            >
+              <input type="hidden" name="form-name" value="contact v1" />
               {formData.map((el, index) => (
                 <FormInputRow key={index}>
                   <FormLabel>{el.label} *</FormLabel>
