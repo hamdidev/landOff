@@ -2,13 +2,15 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export const FormSection = styled.div`
-  padding: clamp(50px, 30vh, 100px) 0;
+  //padding: clamp(50px, 30vh, 100px) 0;
+  padding-top: 20px;
   border-radius: 30px;
   width: 100%;
+  // overflow: hidden;
 `;
 
 export const FormTitle = styled.h1`
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   font-size: 3rem;
   line-height: 1.1;
   font-weight: 600;
@@ -89,7 +91,7 @@ export const FormInputRow = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: stretch;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 
   > p {
     font-size: 0.8rem;

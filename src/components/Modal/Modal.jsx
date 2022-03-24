@@ -14,7 +14,7 @@ const Modal = ({ showModal, toggleModal }) => {
 
   const keyPress = useCallback(
     (e) => {
-      if (e.key && showModal) {
+      if (e.key(27) && showModal) {
         toggleModal();
       }
     },

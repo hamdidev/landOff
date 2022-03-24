@@ -4,6 +4,7 @@ import Skills from "../components/Skills/Skills";
 import Work from "../components/Content/Work";
 import Testimonials from "../components/Testimonials/Testimonials";
 import { Contact } from "../components/Contact/Contact";
+import Form from "../components/Form/Form";
 
 const Home = () => {
   return (
