@@ -11,7 +11,7 @@ import {
   FormButton,
   FormMessage,
 } from "./FormStyle";
-import { Container } from "../../globalStyles";
+import { Container } from "../../globalStyle";
 
 const Form = () => {
   const [formData, setFormData] = useState({

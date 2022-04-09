@@ -2,14 +2,14 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export const FormSection = styled.div`
-  padding: clamp(50px, 30vh, 100px) 0;
+  padding: clamp(32px, 30vh, 1px) 0;
   border-radius: 30px;
   width: 100%;
 `;
 
 export const FormTitle = styled.h1`
-  margin-bottom: 4rem;
-  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
   line-height: 1.1;
   font-weight: 600;
 `;
@@ -57,8 +57,8 @@ export const FormWrapper = styled.form`
 export const FormButton = styled.button`
   background-color: #ef4b6c;
   width: 100%;
-  margin-top: 2rem;
   height: 4rem;
+  margin-top: 1rem;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.75px;
