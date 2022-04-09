@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   FormColumn,
   FormWrapper,
@@ -11,109 +11,104 @@ import {
   FormButton,
   FormMessage,
 } from "./FormStyle";
-import { Container } from "../../globalStyle";
-import validateForm from "./validateForm";
+import { Container } from "../../globalStyles";
 
 const Form = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
-  const [error, setError] = useState(null);
-  const [success, setSuccess] = useState(null);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const resultError = validateForm({ name, email, subject, message });
-
-    if (resultError !== null) {
-      setError(resultError);
-      return;
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState({});
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+  const validate = (formData) => {
+    let formErrors = {};
+    if (!formData.name) {
+      formErrors.name = "Name is required";
     }
-    setName("");
-    setEmail("");
-    setSubject("");
-    setMessage("");
-    setError(null);
-    setSuccess("Message was sent!");
+    if (!formData.email) {
+      formErrors.email = "Email is required";
+    }
+    if (!formData.message) {
+      formErrors.message = "Message is required";
+    }
+    return formErrors;
   };
 
-  const messageVariants = {
-    hidden: { y: 30, opacity: 0 },
-    animate: { y: 0, opacity: 1, transition: { delay: 0.2, duration: 0.4 } },
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const handleSubmit = (e) => {
+    setErrors(validate(formData));
+    setIsSubmitted(true);
+    e.preventDefault();
+  };
+  const encode = (data) => {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key])
+      )
+      .join("&");
   };
 
-  const formData = [
-    {
-      label: "Name",
-      value: name,
-      onChange: (e) => setName(e.target.value),
-      type: "text",
-    },
-    {
-      label: "Email",
-      value: email,
-      onChange: (e) => setEmail(e.target.value),
-      type: "email",
-    },
-    {
-      label: "Subject",
-      value: subject,
-      onChange: (e) => setSubject(e.target.value),
-    },
-    {
-      label: "Message",
-      value: message,
-      onChange: (e) => setMessage(e.target.value),
-    },
-  ];
-
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && isSubmitted) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({ "form-name": "contact-form", ...formData }),
+      })
+        .then(() => alert("Success!"))
+        .then(() => setIsSubmitted(false))
+        .then(() => setFormData({ name: "", email: "", message: "" }))
+        .catch((error) => alert(error));
+    }
+  }, [errors, formData, isSubmitted]);
   return (
     <FormSection>
       <Container>
         <FormRow>
           <FormColumn>
-            <FormTitle>Let's talk</FormTitle>
-            <FormWrapper
-              onSubmit={handleSubmit}
-              name="contact-form"
-              method="POST"
-              action="contact/?success=true"
-              data-netlify="true"
-            >
-              <input type="hidden" name="form-name" value="contact-form" />
-              {formData.map((el, index) => (
-                <FormInputRow key={index}>
-                  <FormLabel>{el.label} *</FormLabel>
-                  <FormInput
-                    type={el.type}
-                    value={el.value}
-                    onChange={el.onChange}
-                  />
-                </FormInputRow>
-              ))}
+            <FormTitle>Let's Talk</FormTitle>
+            <FormWrapper onSubmit={handleSubmit}>
+              <FormInputRow>
+                <FormLabel htmlFor="name">Name</FormLabel>
+                <FormInput
+                  type="text"
+                  name="name"
+                  id="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                />
+                {errors.name && <p>{errors.name}</p>}
+              </FormInputRow>
+              <FormInputRow>
+                <FormLabel htmlFor="email">Email</FormLabel>
+                <FormInput
+                  type="email"
+                  name="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                />
+                {errors.email && <p>{errors.email}</p>}
+              </FormInputRow>
 
-              <FormButton type="submit">Send</FormButton>
+              <FormInputRow>
+                <FormLabel htmlFor="message">Message</FormLabel>
+                <FormMessage
+                  type="text"
+                  name="message"
+                  id="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                />
+                {errors.message && <p>{errors.message}</p>}
+              </FormInputRow>
+
+              <FormButton type="submit">Let's talk</FormButton>
             </FormWrapper>
-            {error && (
-              <FormMessage
-                variants={messageVariants}
-                initial="hidden"
-                animate="animate"
-                error
-              >
-                {error}
-              </FormMessage>
-            )}
-            {success && (
-              <FormMessage
-                variants={messageVariants}
-                initial="hidden"
-                animate="animate"
-              >
-                {success}
-              </FormMessage>
-            )}
           </FormColumn>
         </FormRow>
       </Container>

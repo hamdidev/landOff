@@ -2,15 +2,13 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 export const FormSection = styled.div`
-  //padding: clamp(50px, 30vh, 100px) 0;
-  padding-top: 20px;
+  padding: clamp(50px, 30vh, 100px) 0;
   border-radius: 30px;
   width: 100%;
-  // overflow: hidden;
 `;
 
 export const FormTitle = styled.h1`
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   font-size: 3rem;
   line-height: 1.1;
   font-weight: 600;
@@ -79,19 +77,12 @@ export const FormButton = styled.button`
   }
 `;
 
-export const FormMessage = styled(motion.div)`
-  color: ${({ error }) => (error ? "red" : "green")};
-  padding: 5px;
-  text-align: center;
-  margin-top: 1rem;
-`;
-
 export const FormInputRow = styled.div`
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: stretch;
-  margin-bottom: 0.5rem;
+  margin-bottom: 2rem;
 
   > p {
     font-size: 0.8rem;
@@ -108,6 +99,15 @@ export const FormInput = styled.input`
   width: 100%;
   border: none;
   font-size: 1rem;
+  border-bottom: 1px solid #cecece;
+`;
+export const FormMessage = styled.textarea`
+  outline: none;
+  font-size: 1rem;
+  display: block;
+  padding-left: 10px;
+  border-radius: 2px;
+  border: none;
   border-bottom: 1px solid #cecece;
 `;
 
