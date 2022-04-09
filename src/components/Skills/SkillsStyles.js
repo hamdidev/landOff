@@ -24,7 +24,7 @@ export const ClientTextWrapper = styled.div`
     position: absolute;
     bottom: 0;
     left: 50%;
-    background-color: #ef4b6c;
+    background-color: #5c33a2;
     transform: translateX(-50%);
   }
 `;

@@ -55,7 +55,7 @@ export const FormWrapper = styled.form`
 `;
 
 export const FormButton = styled.button`
-  background-color: #ef4b6c;
+  background-color: #5c33a2;
   width: 100%;
   height: 4rem;
   margin-top: 1rem;
@@ -65,15 +65,14 @@ export const FormButton = styled.button`
   text-transform: uppercase;
   border-radius: 28px;
   line-height: 30px;
-  box-shadow: 10px 16px 40px 0 rgb(255 84 117 / 46%);
   text-align: center;
   border: none;
   color: #fff;
   cursor: pointer;
 
   &:hover {
-    background-color: #f06e88;
-    transition: background-color 0.4s ease-in;
+    background-color: #855ccb;
+    transition: background-color 0.3s ease-in;
   }
 `;
 
