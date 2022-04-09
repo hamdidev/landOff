@@ -48,7 +48,7 @@ const Hero = () => {
 
   return (
     <>
-      <HeroSection id="hero">
+      <HeroSection id="home">
         <HeroImage className="pattern" src="./images/hero-pattern-bg-lg.png" />
         <HeroImage className="guy" src="./images/hero-guy-1.png" />
         <CharacterContainer>

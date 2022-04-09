@@ -34,7 +34,7 @@ const Navbar = () => {
     <IconContext.Provider value={{ color: "#fff" }}>
       <Nav>
         <NavbarContainer>
-          <NavLogo>
+          <NavLogo href="/">
             <NavIcon src="./images/logo.svg" alt="" />
             esignify
           </NavLogo>
@@ -42,7 +42,7 @@ const Navbar = () => {
             {show ? <FaTimes /> : <CgMenuRight />}
           </MobileIcon>
           <NavMenu show={show}>
-            {["home", "about", "skills", "work", "testimonials", "contact"].map(
+            {["about", "skills", "work", "testimonials", "contact"].map(
               (item) => (
                 <NavItem key={item}>
                   <NavLinks onClick={() => setShow(false)} href={`#${item}`}>
