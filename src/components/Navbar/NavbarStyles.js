@@ -114,7 +114,7 @@ export const NavLinks = styled.a`
   text-transform: capitalize;
 
   &:hover {
-    border-bottom: 2px solid #ec421d;
+    border-bottom: 2px solid #5c33a2;
   }
 
   @media screen and (max-width: 960px) {

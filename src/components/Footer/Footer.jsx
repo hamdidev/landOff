@@ -35,7 +35,7 @@ const Footer = () => {
       </RightSide>
 
       <FooterCredit>
-        <Footertext>Designed & Built by M.HALAF</Footertext>
+        <Footertext> Built by M.HALAF</Footertext>
       </FooterCredit>
 
       <LeftSide>
