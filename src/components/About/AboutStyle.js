@@ -53,7 +53,7 @@ export const AboutImg = styled.img`
 
 export const AboutTextWrapper = styled.div`
   position: relative;
-  margin-bottom: 4rem;
+  margin: 1rem auto;
 `;
 
 export const FeatureTitle = styled.h2`

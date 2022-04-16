@@ -6,6 +6,7 @@ import {
   Text,
   Title,
 } from "./ContactStyles";
+import Form from "../Form/Form";
 
 export const Contact = () => {
   return (

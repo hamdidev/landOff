@@ -3,7 +3,6 @@ import { Container } from "../../globalStyle";
 import { Link } from "react-router-dom";
 
 export const Nav = styled.nav`
-  //background: transparent;
   margin-bottom: -80px;
   height: 70px;
   display: flex;
@@ -14,13 +13,10 @@ export const Nav = styled.nav`
   top: 0;
   z-index: 99;
   width: 100%;
-  // Added code
-  //box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   background: rgba(255, 255, 255, 0.25);
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
-  //border: 1px solid rgba(255, 255, 255, 0.18);
 `;
 
 export const NavbarContainer = styled(Container)`
@@ -66,6 +62,7 @@ export const NavMenu = styled.ul`
   list-style: none;
   text-align: center;
   width: 100%;
+  cursor: pointer;
 
   @media screen and (max-width: 960px) {
     flex-direction: column;
@@ -79,7 +76,7 @@ export const NavMenu = styled.ul`
     visibility: ${({ show }) => (show ? "visible" : "hidden")};
     transform: translateY(${({ show }) => (show ? "0" : "-10px")});
     transition: opacity 0.5s ease;
-    background-color: #41d0e1;
+    background-color: #8e99d7;
   }
 
   > li:first-child {
@@ -110,7 +107,7 @@ export const NavLinks = styled.a`
   font-family: "Rubik", sans-serif;
   font-size: 17px;
   font-weight: 500;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
   text-transform: capitalize;
 
   &:hover {
@@ -125,7 +122,7 @@ export const NavLinks = styled.a`
 
     &:hover {
       border-bottom: none;
-      color: #4b59f7;
+      color: #5c33a2;
       transition: all 0.3s ease;
     }
   }

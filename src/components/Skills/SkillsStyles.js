@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ClientSection = styled.div`
-  padding: 140px 0;
+  padding: 100px 0;
   position: relative;
   margin: 0 auto;
   min-height: 100vh;
