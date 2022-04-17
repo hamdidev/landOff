@@ -35,8 +35,7 @@ const Navbar = () => {
       <Nav>
         <NavbarContainer>
           <NavLogo href="/">
-            <NavIcon src="./images/logo.svg" alt="" />
-            esignify
+            <NavIcon src="./images/logo.png" alt="" />
           </NavLogo>
           <MobileIcon onClick={() => setShow(!show)}>
             {show ? <FaTimes /> : <CgMenuRight />}
