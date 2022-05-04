@@ -8,11 +8,10 @@ export const HeroSection = styled(Section)`
   background-attachment: fixed;
   z-index: 11;
   align-items: center;
-  height: 640px;
+  height: 100vh;
   position: relative;
-  display: flex;
 
-  @media screen and (min-width: 768px) {
+  /* @media screen and (min-width: 768px) {
     height: 592px;
   }
 
@@ -26,7 +25,7 @@ export const HeroSection = styled(Section)`
 
   @media screen and (min-width: 2000px) {
     height: 1200px;
-  }
+  } */
 `;
 
 export const HeroImage = styled.img`
@@ -102,7 +101,7 @@ export const HeroContent = styled.div`
 
 export const Heading = styled.h1`
   margin-bottom: 1.5rem;
-  font-size: clamp(2.8rem, 6vw, 6.7rem);
+  font-size: clamp(1.4rem, 6vw, 4.2rem);
   line-height: 1.1;
   font-weight: 600;
   text-align: center;
@@ -163,5 +162,31 @@ export const HeroButton = styled(motion.button)`
   &:hover {
     box-shadow: 0 0 9px 9px #5238b1;
     transition: box-shadow 0.3s ease-in;
+  }
+`;
+
+export const HeroContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 50px;
+  height: 100%;
+  @media screen and (max-width: 768px) {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+`;
+export const LandingContainer = styled.div`
+  margin: 0;
+`;
+
+export const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media screen and (max-width: 768px) {
+    margin-top: 200px;
+  }
+  @media screen and (max-width: 908px) {
+    padding: 0 10px;
   }
 `;
