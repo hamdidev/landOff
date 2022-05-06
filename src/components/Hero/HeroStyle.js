@@ -10,6 +10,7 @@ export const HeroSection = styled(Section)`
   align-items: center;
   height: 100vh;
   position: relative;
+  width: 100%;
 
   /* @media screen and (min-width: 768px) {
     height: 592px;

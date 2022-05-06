@@ -57,6 +57,9 @@ export const TestiTitle = styled.h2`
   font-size: clamp(1.3rem, 13vw, 3.1rem);
   line-height: 1.06;
   letter-spacing: 0.4rem;
+  @media screen and (max-width: 466px) {
+    font-size: clamp(1.3rem, 13vw, 2.4rem);
+  }
 `;
 
 export const TestiText = styled.p`

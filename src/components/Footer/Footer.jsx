@@ -26,19 +26,19 @@ import Linkedin from "./socialsIcon/linkedin.svg";
 const Footer = () => {
   return (
     <FooterContainer>
-      {/* <RightSide>
+      <RightSide>
         <EmailWrapper>
           <Emaillink href="mailto:hello@muhammedhalaf.com">
             hello@muhammedhalaf.com
           </Emaillink>
         </EmailWrapper>
-      </RightSide> */}
+      </RightSide>
 
       <FooterCredit>
         <Footertext> Built by M.HALAF</Footertext>
       </FooterCredit>
 
-      {/* <LeftSide>
+      <LeftSide>
         <SocialList>
           <SocialItem>
             <SocialIconLink
@@ -79,7 +79,7 @@ const Footer = () => {
             </SocialIconLink>
           </SocialItem>
         </SocialList>
-      </LeftSide> */}
+      </LeftSide>
     </FooterContainer>
   );
 };
